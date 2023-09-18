@@ -13,6 +13,7 @@ public class AdminDemoUIApp {
     private static NavigationPane navigationPane = null;
 
     public static DashboardPage dashboardPage() {
+
         return new DashboardPage("Dashboard / nopCommerce administration");
     }
 

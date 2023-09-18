@@ -19,15 +19,19 @@ public void i_navigate_to_admin_demo_website() {
 @Given("I enter user credentials")
 public void i_enter_user_credentials() {
     //logger.info("Running: given step ####################");
+    AdminDemoUIApp.loginPage().enterUsername();
+    AdminDemoUIApp.loginPage().enterPassword();
 }
 
 @When("I click on login button")
 public void i_click_on_login_button() {
+
     AdminDemoUIApp.loginPage().clickOnLoginButton();
 }
 
 @Then("I am navigated to dashboard page")
 public void i_am_navigated_to_dashboard_page() {
+
     AdminDemoUIApp.dashboardPage().VerifyDashboardPageIsDisplayed();
 }
 }

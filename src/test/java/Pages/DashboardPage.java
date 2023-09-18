@@ -14,6 +14,7 @@ public class DashboardPage extends BasePage{
     }
 
     public void VerifyDashboardPageIsDisplayed(){
+
         Browser.waitForElementToDisplay(dashboard);
     }
 }

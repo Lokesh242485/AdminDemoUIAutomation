@@ -23,7 +23,11 @@ public class Browser {
         waitForElementToDisplay(element);
         element.click();
     }
-
+    public static void enterValue(WebElement element, String str){
+        waitForElementToDisplay(element);
+        element.clear();
+        element.sendKeys(str);
+    }
     public static void waitUntilAttributeValueIs(WebElement element, String propertyName, String expectedValue){
         Retry(()->element.getAttribute(propertyName).equals(expectedValue));
     }
