@@ -1,7 +1,7 @@
 @LoginFeature
 Feature: Login
 
-  @login @ABC
+  @login
   Scenario: Verify I can login to admin demo website
     Given I navigate to admin demo website
     And I enter user credentials
