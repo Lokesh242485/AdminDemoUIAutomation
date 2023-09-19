@@ -6,11 +6,6 @@ import Pages.*;
 import java.io.IOException;
 
 public class AdminDemoUIApp {
-    private static LoginPage loginPage = null;
-    private static DashboardPage dashboardPage = null;
-    private static ProductsPage productsPage = null;
-    private static TaxSettingsPage taxSettingsPage = null;
-    private static NavigationPane navigationPane = null;
 
     public static DashboardPage dashboardPage() {
 
@@ -27,6 +22,10 @@ public class AdminDemoUIApp {
 
     public static TaxSettingsPage taxSettingsPage(){
         return new TaxSettingsPage("Tax settings / nopCommerce administration");
+    }
+
+    public static CustomersPage customersPage(){
+        return new CustomersPage("Customers / nopCommerce administration");
     }
 
     public static NavigationPane navigationPane(){

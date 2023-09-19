@@ -16,6 +16,10 @@ public class PageNavigationStepDefinition {
                 AdminDemoUIApp.navigationPane().expandSubNavTreeInSideMenu("Settings");
                 AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInSubNavTreeMenu(link);
                 break;
+            case "Customers":
+                AdminDemoUIApp.navigationPane().expandMainNavTreeInSideMenu("Customers");
+                AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInMainNavTreeMenu(link);
+                break;
         }
     }
 
@@ -28,8 +32,11 @@ public class PageNavigationStepDefinition {
             case "Tax settings":
                 AdminDemoUIApp.taxSettingsPage().VerifyTaxSettingsPageIsDisplayed();
                 break;
+            case "Customers":
+                AdminDemoUIApp.customersPage().VerifyCustomersPageIsDisplayed();
+                break;
         }
-        AdminDemoUIApp.navigationPane().clickOnLogoutButton();
+
     }
 
 }

@@ -18,6 +18,7 @@ public class LoginPage extends BasePage{
         Browser.WaitForReady();
     }
 
+
     public void enterUsername(String uname){
     Browser.enterValue(username,uname);
     }

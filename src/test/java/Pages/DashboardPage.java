@@ -10,6 +10,7 @@ public class DashboardPage extends BasePage{
     WebElement dashboard = DriverManager.getInstance().Driver.findElement(By.xpath("//div[@class='content-header']"));
 
     public DashboardPage(String title) {
+
         super(title);
     }
 
