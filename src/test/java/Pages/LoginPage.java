@@ -1,14 +1,10 @@
 package Pages;
 
 import Framework.Browser;
-import Framework.Data.DataManager;
 import Framework.Util.ConfigurationManager;
 import Framework.Util.DriverManager;
-import net.bytebuddy.implementation.bind.annotation.Super;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import java.security.PublicKey;
 
 public class LoginPage extends BasePage{
 
@@ -22,11 +18,11 @@ public class LoginPage extends BasePage{
         Browser.WaitForReady();
     }
 
-    public void enterUsername(){
-    Browser.enterValue(username, ConfigurationManager.getInstance().getProperty("username"));
+    public void enterUsername(String uname){
+    Browser.enterValue(username,uname);
     }
-    public void enterPassword(){
-    Browser.enterValue(password,ConfigurationManager.getInstance().getProperty("password"));
+    public void enterPassword(String pword){
+    Browser.enterValue(password,pword);
     }
 
     public void clickOnLoginButton(){

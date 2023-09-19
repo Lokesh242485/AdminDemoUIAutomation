@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Framework.Root.AdminDemoUIApp;
+import Framework.Util.ConfigurationManager;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.SearchContext;
@@ -19,8 +20,8 @@ public void i_navigate_to_admin_demo_website() {
 @Given("I enter user credentials")
 public void i_enter_user_credentials() {
     //logger.info("Running: given step ####################");
-    AdminDemoUIApp.loginPage().enterUsername();
-    AdminDemoUIApp.loginPage().enterPassword();
+    AdminDemoUIApp.loginPage().enterUsername(ConfigurationManager.getInstance().getProperty("username"));
+    AdminDemoUIApp.loginPage().enterPassword(ConfigurationManager.getInstance().getProperty("password"));
 }
 
 @When("I click on login button")
