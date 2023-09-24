@@ -23,7 +23,6 @@ public class CustomersPage extends BasePage{
     private WebElement dashboard = DriverManager.getInstance().Driver.findElement(By.xpath("//h1[@class='float-left' and contains(text(),'Customers')]"));
 
 
-
     public CustomersPage(String title){
         super(title);
         Browser.WaitForReady();
@@ -36,6 +35,7 @@ public class CustomersPage extends BasePage{
 
         Browser.enterValue(custEmail,email);
     }
+
     public void enterCustFirstName(String fname){
 
         Browser.enterValue(firstName,fname);
@@ -88,6 +88,7 @@ public class CustomersPage extends BasePage{
         Browser.clickOnElement(addNewBtn);
         System.out.println("Add New button clicked");
     }
+
 
 
 }

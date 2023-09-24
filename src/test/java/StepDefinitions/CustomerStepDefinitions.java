@@ -5,6 +5,7 @@ import Framework.Data.DataManager;
 import Framework.Root.AdminDemoUIApp;
 import Framework.Util.ConfigurationManager;
 import Framework.Util.LoggingUtils;
+import Pages.CustomersPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,8 +14,8 @@ import java.io.IOException;
 
 public class CustomerStepDefinitions {
     @And("I enter Customer Email id")
-    public void iEnterCustomerEmailId() {
-        AdminDemoUIApp.customersPage().enterCustEmail(Browser.generateRandomString());
+    public void iEnterCustomerEmailId() throws IOException {
+        AdminDemoUIApp.customersPage().enterCustEmail(DataManager.excelReader("EmailID",1));
         LoggingUtils.debug("Performing action: enter Customer Email id");
     }
 
@@ -92,5 +93,7 @@ public class CustomerStepDefinitions {
         AdminDemoUIApp.customersPage().clickOnAddNewButton();
         LoggingUtils.debug("Performing action: I click on Add New Button");
     }
+
+
 
 }

@@ -16,7 +16,7 @@ import io.cucumber.junit.Cucumber;
 		"json:target/JSONReports/testResult.json",
 		"junit:target/XMLReports/testResult.xml"},
 		//tags = "@Navigation or @login"
-		tags="@NewCustomer"
+		tags="@NewCustomer or @SearchCustomer or @login or @Navigation"
 )
 public class Runner {
 

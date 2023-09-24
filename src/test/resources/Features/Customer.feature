@@ -10,7 +10,12 @@ Feature: Customer Page
     And I click on Add New Button
     And I enter Email id of New Customer
     And I enter Password of New Customer
-
+    And I enter First Name
+    And I enter Last Name
+    And I select Gender
+    And I enter Date of Birth
+    And I enter Company Name
+    Then I select Save Button
 
 
 

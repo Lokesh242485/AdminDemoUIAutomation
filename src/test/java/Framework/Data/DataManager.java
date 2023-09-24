@@ -5,18 +5,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public  class DataManager {
     public static String DatafromExcel;
-
+    static String filePath="C:\\Tools\\Selenium\\TestFiles\\CustomerDataRead.xlsx";
     public static String excelReader(String targetColumnName,int targetRowNumber) throws IOException {
 
 
 
         try {
             // Create a FileInputStream to read the Excel file
-            FileInputStream inputStream = new FileInputStream("C:\\Tools\\Selenium\\TestFiles\\CustomerData.xlsx");
+            FileInputStream inputStream = new FileInputStream(filePath);
 
             // Create a Workbook instance for the Excel file (XLSX format)
             Workbook workbook = new XSSFWorkbook(inputStream);
@@ -85,5 +86,37 @@ public  class DataManager {
         }
         return DatafromExcel;
     }
-}
+
+
+    public static void writeEmailToExcel(String email) {
+        try (FileInputStream fis = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fis)) {
+            //email=excelReader("EmailID",1);
+
+           // String sheetName = "Email";
+            // Get the existing sheet by name
+            Sheet sheet = workbook.getSheetAt(1);
+            if (sheet == null) {
+                System.err.println("Sheet  not found in the existing Excel file.");
+                return;
+            }
+            // Create a new row and cell to store the email ID
+            Row row = sheet.createRow(sheet.getLastRowNum() + 1); // Create a new row after the last row
+            Cell cell = row.createCell(0); // Create a cell in the first column (column 0)
+            cell.setCellValue(email);
+
+            // Save the workbook to a file
+            try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
+                workbook.write(outputStream);
+                System.out.println("Email ID written to Excel successfully.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+
 

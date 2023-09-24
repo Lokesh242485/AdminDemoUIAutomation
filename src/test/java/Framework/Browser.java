@@ -25,6 +25,7 @@ public class Browser {
         waitForElementToDisplay(element);
         element.click();
     }
+
     public static void enterValue(WebElement element, String str){
         waitForElementToDisplay(element);
         element.clear();
