@@ -15,7 +15,9 @@ import io.cucumber.junit.Cucumber;
 		plugin = {"pretty","html:target/HtmlReports/testResult.html",
 		"json:target/JSONReports/testResult.json",
 		"junit:target/XMLReports/testResult.xml"},
-		tags = "@Navigation or @login")
+		//tags = "@Navigation or @login"
+		tags="@NewCustomer"
+)
 public class Runner {
 
 }

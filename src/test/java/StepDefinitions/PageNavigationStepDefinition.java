@@ -19,11 +19,12 @@ public class PageNavigationStepDefinition {
             case "Customers":
                 AdminDemoUIApp.navigationPane().expandMainNavTreeInSideMenu("Customers");
                 AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInMainNavTreeMenu(link);
+                System.out.println("Customer link clicked");
                 break;
         }
     }
 
-    @Then("I am navigate to {string} page")
+    @And("I am navigate to {string} page")
     public void i_am_navigate_to_link_page(String page) {
         switch (page){
             case "Products":
@@ -34,6 +35,7 @@ public class PageNavigationStepDefinition {
                 break;
             case "Customers":
                 AdminDemoUIApp.customersPage().VerifyCustomersPageIsDisplayed();
+                System.out.println("Customer Page reached");
                 break;
         }
 

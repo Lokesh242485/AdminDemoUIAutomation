@@ -2,6 +2,7 @@ package Pages;
 
 import Framework.Browser;
 import Framework.Util.DriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -19,7 +20,9 @@ public class CustomersPage extends BasePage{
     private WebElement ipAddress= DriverManager.getInstance().Driver.findElement(By.id("SearchIpAddress"));
     private WebElement customerRole= DriverManager.getInstance().Driver.findElement(By.xpath("//div[@class='k-multiselect-wrap k-floatwrap' and  @role='listbox']"));
     private WebElement addNewBtn= DriverManager.getInstance().Driver.findElement(By.xpath("//a[@class='btn btn-primary']"));
-   WebElement dashboard = DriverManager.getInstance().Driver.findElement(By.xpath("//h1[@class='float-left' and contains(text(),Customers)]"));
+    private WebElement dashboard = DriverManager.getInstance().Driver.findElement(By.xpath("//h1[@class='float-left' and contains(text(),'Customers')]"));
+
+
 
     public CustomersPage(String title){
         super(title);
@@ -41,18 +44,12 @@ public class CustomersPage extends BasePage{
 
         Browser.enterValue(lastName,lname);
     }
-    public void selectBrithMonth(){
 
-        Browser.clickOnElement(brithMonth);
-    }
     public void enterBrithMonth(String bmonth){
 
         Browser.selectByVisibleText(brithMonth,bmonth);
     }
-    public void selectBrithDate(){
 
-        Browser.clickOnElement(birthDate);
-    }
     public void enterBirthDate(String bdate){
 
         Browser.selectByVisibleText(birthDate,bdate);
@@ -81,10 +78,7 @@ public class CustomersPage extends BasePage{
 
         Browser.enterValue(ipAddress,ipadd);
     }
-    public void selectcustomerRole(){
 
-        Browser.clickOnElement(customerRole);
-    }
     public void entercustomerRole(String crole){
 
         Browser.selectByVisibleText(customerRole,crole);
@@ -92,6 +86,8 @@ public class CustomersPage extends BasePage{
 
     public void clickOnAddNewButton(){
         Browser.clickOnElement(addNewBtn);
+        System.out.println("Add New button clicked");
     }
+
 
 }

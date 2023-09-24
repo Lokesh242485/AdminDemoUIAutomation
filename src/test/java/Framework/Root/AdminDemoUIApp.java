@@ -28,6 +28,11 @@ public class AdminDemoUIApp {
         return new CustomersPage("Customers / nopCommerce administration");
     }
 
+    public static NewCustomerPage newCustomersPage(){
+        return new NewCustomerPage("Add a new customer / nopCommerce administration");
+    }
+
+
     public static NavigationPane navigationPane(){
         return new NavigationPane();
     }

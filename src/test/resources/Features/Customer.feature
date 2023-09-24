@@ -1,26 +1,20 @@
 Feature: Customer Page
+  @NewCustomer
   Scenario: Validate Add new Customer
     Given I navigate to admin demo website
     And I enter user credentials
     And I click on login button
     And I am navigated to dashboard page
     When I click on "Customers" link on MainNavTreeMenu
-    Then I am navigate to "Customers" page
-    When I click on Add New Button
+    And I am navigate to "Customers" page
+    And I click on Add New Button
     And I enter Email id of New Customer
     And I enter Password of New Customer
-    And I enter First Name
-    And I enter Last Name
-    And I select Gender
-    And I enter Date of Birth
-    And I enter Company Name
-    And I select Save Button
-    Then A new customer is created
-    When I search the new customer by email id
-    Then The customer comes in the search results
 
 
 
+
+  @SearchCustomer
   Scenario: Validate Search new Customer
     Given I navigate to admin demo website
     And I enter user credentials

@@ -127,4 +127,24 @@ public class Browser {
             }
         }
     }
+    public static boolean selectByIndex(WebElement ele,int indexVal) {
+        boolean flag = false;
+        try {
+            Select s = new Select(ele);
+            s.selectByIndex(indexVal);
+            flag = true;
+            return true;
+        } catch (Exception e) {
+            return false;
+        } finally {
+            if (flag) {
+                System.out.println("Option selected by VisibleText");
+            } else {
+                System.out.println("Option not selected by VisibleText");
+            }
+        }
+    }
+
+
+
 }
