@@ -1,5 +1,5 @@
 Feature: Customer Page
-  @NewCustomer
+  @parallelTest@NewCustomer
   Scenario: Validate Add new Customer
     Given I navigate to admin demo website
     And I enter user credentials
@@ -19,7 +19,7 @@ Feature: Customer Page
 
 
 
-  @SearchCustomer
+  @parallelTest@SearchCustomer
   Scenario: Validate Search new Customer
     Given I navigate to admin demo website
     And I enter user credentials

@@ -16,7 +16,9 @@ import io.cucumber.junit.Cucumber;
 		"json:target/JSONReports/testResult.json",
 		"junit:target/XMLReports/testResult.xml"},
 		//tags = "@Navigation or @login"
-		tags="@NewCustomer or @SearchCustomer or @login or @Navigation"
+		tags = "@parallelTest", // Optional: Use tags to filter scenarios
+		publish = true
+		//threads = 3 // Specify the number of threads for parallel execution
 )
 public class Runner {
 

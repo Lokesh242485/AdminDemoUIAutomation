@@ -1,7 +1,7 @@
 @NavigationFeature
 Feature: PageNavigation
 
-  @Navigation
+  @parallelTest@Navigation
   Scenario Outline: Verify I can navigate to products pages on admin demo website
     Given I navigate to admin demo website
     And I enter user credentials
