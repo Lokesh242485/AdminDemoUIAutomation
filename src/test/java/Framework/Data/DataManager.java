@@ -2,22 +2,20 @@ package Framework.Data;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.ResourceLoader;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public  class DataManager {
     public static String DatafromExcel;
-    static String filePath="C:\\Tools\\Selenium\\TestFiles\\CustomerDataRead.xlsx";
+    static String filePath="CustomerDataRead.xlsx";
     public static String excelReader(String targetColumnName,int targetRowNumber) throws IOException {
 
 
 
         try {
             // Create a FileInputStream to read the Excel file
-            FileInputStream inputStream = new FileInputStream(filePath);
+            InputStream inputStream = ResourceLoader.class.getClassLoader().getResourceAsStream(filePath);
 
             // Create a Workbook instance for the Excel file (XLSX format)
             Workbook workbook = new XSSFWorkbook(inputStream);
