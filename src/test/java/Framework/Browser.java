@@ -2,6 +2,7 @@ package Framework;
 
 import Framework.Util.ConfigurationManager;
 import Framework.Util.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
@@ -111,22 +112,28 @@ public class Browser {
         return sb.toString();
     }
 
-    public static boolean selectByVisibleText(WebElement ele,String visibletext) {
-        boolean flag = false;
-        try {
-            Select s = new Select(ele);
-            s.selectByVisibleText(visibletext);
-            flag = true;
-            return true;
-        } catch (Exception e) {
-            return false;
-        } finally {
-            if (flag) {
-                System.out.println("Option selected by VisibleText");
-            } else {
-                System.out.println("Option not selected by VisibleText");
-            }
-        }
+    public static void selectByVisibleText(WebElement dropdownElement,String visibleText) {
+        Select select = new Select(dropdownElement);
+
+        // Select the option with visible text "ABC"
+        select.selectByVisibleText(visibleText);
+        // Optionally, you can retrieve the selected option to verify
+        WebElement selectedOption = select.getFirstSelectedOption();
+        System.out.println("Selected option: " + selectedOption.getText());
+    }
+
+    public static void selectByVisibleTextForDivTypeDropDown (WebElement divDropdown,String visibleText) {
+
+
+        // Click on the div to open the dropdown (or perform any necessary interactions)
+        divDropdown.click();
+
+        // Locate and click on the specific option (e.g., by text) within the div dropdown
+        WebElement optionToSelect = divDropdown.findElement(By.xpath("//li[text()="+visibleText+"]"));
+        optionToSelect.click();
+
+
+
     }
     public static boolean selectByIndex(WebElement ele,int indexVal) {
         boolean flag = false;

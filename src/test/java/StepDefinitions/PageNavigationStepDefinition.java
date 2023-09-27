@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Framework.Root.AdminDemoUIApp;
+import Framework.Util.LoggingUtils;
 import io.cucumber.java.en.*;
 
 public class PageNavigationStepDefinition {
@@ -9,17 +10,23 @@ public class PageNavigationStepDefinition {
         switch (link) {
             case "Products":
                 AdminDemoUIApp.navigationPane().expandMainNavTreeInSideMenu("Catalog");
+                LoggingUtils.debug("Catalog is selected");
                 AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInMainNavTreeMenu(link);
+                LoggingUtils.debug("Products is selected");
                 break;
             case "Tax settings":
                 AdminDemoUIApp.navigationPane().expandMainNavTreeInSideMenu("Configuration");
+                LoggingUtils.debug("Configuration is selected");
                 AdminDemoUIApp.navigationPane().expandSubNavTreeInSideMenu("Settings");
+                LoggingUtils.debug("Settings is selected");
                 AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInSubNavTreeMenu(link);
+                LoggingUtils.debug("Tax setting is selected ");
                 break;
             case "Customers":
                 AdminDemoUIApp.navigationPane().expandMainNavTreeInSideMenu("Customers");
+                LoggingUtils.debug("Customers is selected");
                 AdminDemoUIApp.navigationPane().clickOnPageNavigationLinkInMainNavTreeMenu(link);
-                System.out.println("Customer link clicked");
+                LoggingUtils.debug("Customers--> Customers is selected");
                 break;
         }
     }
@@ -29,13 +36,15 @@ public class PageNavigationStepDefinition {
         switch (page){
             case "Products":
                 AdminDemoUIApp.productsPage().VerifyProductsPageIsDisplayed();
+                LoggingUtils.debug("Product Page is Reached");
                 break;
             case "Tax settings":
                 AdminDemoUIApp.taxSettingsPage().VerifyTaxSettingsPageIsDisplayed();
+                LoggingUtils.debug("Tax settings Page is Reached");
                 break;
             case "Customers":
                 AdminDemoUIApp.customersPage().VerifyCustomersPageIsDisplayed();
-                System.out.println("Customer Page reached");
+                LoggingUtils.debug("Customers Page is Reached");
                 break;
         }
 

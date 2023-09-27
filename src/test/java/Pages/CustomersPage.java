@@ -18,7 +18,7 @@ public class CustomersPage extends BasePage{
     private WebElement lastActivityTo= DriverManager.getInstance().Driver.findElement(By.id("SearchLastActivityTo"));
     private WebElement companyName= DriverManager.getInstance().Driver.findElement(By.id("SearchCompany"));
     private WebElement ipAddress= DriverManager.getInstance().Driver.findElement(By.id("SearchIpAddress"));
-    private WebElement customerRole= DriverManager.getInstance().Driver.findElement(By.xpath("//div[@class='k-multiselect-wrap k-floatwrap' and  @role='listbox']"));
+    private WebElement customerRole= DriverManager.getInstance().Driver.findElement(By.id("SelectedCustomerRoleIds"));
     private WebElement addNewBtn= DriverManager.getInstance().Driver.findElement(By.xpath("//a[@class='btn btn-primary']"));
     private WebElement dashboard = DriverManager.getInstance().Driver.findElement(By.xpath("//h1[@class='float-left' and contains(text(),'Customers')]"));
 

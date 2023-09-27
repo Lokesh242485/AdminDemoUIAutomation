@@ -49,16 +49,17 @@ public  class DataManager {
                                 System.out.println("Value: " + cell.getStringCellValue());
                                 DatafromExcel=cell.getStringCellValue();
                                 break;
-                            /*case NUMERIC:
+                            case NUMERIC:
                                 if (DateUtil.isCellDateFormatted(cell)) {
                                     System.out.println("Date Value: " + cell.getDateCellValue());
                                 } else {
                                     System.out.println("Numeric Value: " + cell.getNumericCellValue());
+                                    DatafromExcel = String.valueOf((int) cell.getNumericCellValue());
                                 }
                                 break;
                             case BOOLEAN:
                                 System.out.println("Boolean Value: " + cell.getBooleanCellValue());
-                                break;*/
+                                break;
                             case BLANK:
                                 System.out.println("Value is Mendetory");
                                 break;
