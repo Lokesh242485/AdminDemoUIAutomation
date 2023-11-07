@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
@@ -61,7 +62,8 @@ public class DriverManager {
                break;
            default:
                ChromeOptions options = new ChromeOptions();
-               if (ConfigurationManager.getInstance().getProperty("emulate").equals("y")) {
+               WebDriverManager.chromedriver().setup();
+              if (ConfigurationManager.getInstance().getProperty("emulate").equals("y")) {
                    Map<String, Object> emulation = new HashMap<>();
                    emulation.put("deviceName", ConfigurationManager.getInstance().getProperty("mobileDevice"));
                    options.setExperimentalOption("mobileEmulation", emulation);
