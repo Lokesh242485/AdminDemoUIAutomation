@@ -19,6 +19,7 @@ import io.cucumber.junit.Cucumber;
 		tags = "@parallelTest", // Optional: Use tags to filter scenarios
 		publish = true
 		//threads = 3 // Specify the number of threads for parallel execution
+		//
 )
 public class Runner {
 
